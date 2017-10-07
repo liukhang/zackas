@@ -207,7 +207,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="{{url('administrator/logout')}}" class="btn btn-default btn-flat">Log out</a>
+                      <a href="{{url('auth/logout')}}" class="btn btn-default btn-flat">Log out</a>
                     </div>
                   </li>
                 </ul>

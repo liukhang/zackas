@@ -102,14 +102,14 @@
                   <input type="hidden" name="total_qty" value="{!! Cart::count() !!}">
                   @if($row->options->pricesale > 0)
                   <?php 
-                    $total_sale+=($row->options->pricesale * $row["qty"]);
+                    $total_sale+=($row->options->pricesale * $row->qty);
                   ?>
                   <input type="hidden" name="idproduct" value="{!! $row->id !!}">
                   <input type="hidden" name="sl" value="{!! $row->qty !!}">
                     <input type="hidden" name="gia_sp" value="@if($row->options->pricesale > 0){!! $row->options->pricesale !!}@else {!! $row->price !!} @endif">
                    <input type="hidden" name="tong_gia_sp" value="@if($row->options->pricesale > 0){!! $row->options->pricesale * $row->qty !!}@else {!! $row->price * $row->qty !!} @endif">
                   @else
-                      <?php $total+=($row["qty"] * $row["price"]); ?>
+                      <?php $total+=($row->qty * $row->price); ?>
                   @endif
                  <li class="product product-has-image clearfix" style="margin-bottom:5px;">
                      <img src="{!! url('public/upload/'.$row->options->image) !!}" class="pull-left" width="50px" style="margin-right:5px;">
@@ -180,14 +180,14 @@
                   <input type="hidden" name="total_qty" value="{!! Cart::count() !!}">
                   @if($row->options->pricesale > 0)
                   <?php 
-                    $total_sale+=($row->options->pricesale * $row["qty"]);
+                    $total_sale+=($row->options->pricesale * $row->qty);
                   ?>
                   <input type="hidden" name="idproduct" value="{!! $row->id !!}">
                   <input type="hidden" name="sl" value="{!! $row->qty !!}">
                     <input type="hidden" name="gia_sp" value="@if($row->options->pricesale > 0){!! $row->options->pricesale !!}@else {!! $row->price !!} @endif">
                    <input type="hidden" name="tong_gia_sp" value="@if($row->options->pricesale > 0){!! $row->options->pricesale * $row->qty !!}@else {!! $row->price * $row->qty !!} @endif">
                   @else
-                      <?php $total+=($row["qty"] * $row["price"]); ?>
+                      <?php $total+=($row->qty * $row->price); ?>
                   @endif
                  <li class="product product-has-image clearfix" style="margin-bottom:5px;">
                      <img src="{!! url('public/upload/'.$row->options->image) !!}" class="pull-left" width="50px" style="margin-right:5px;">

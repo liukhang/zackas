@@ -46,7 +46,7 @@
 							$total_sale = 0;
 						?>
 						@foreach($content as $row)
-							<tr class="carttr_1" id="cart_{!! $row->rowid !!}">
+							<tr class="carttr_1" id="cart_{!! $row->rowId !!}">
 								<td>
 									<div class="cartpage-image">
 										<a href="{!! url('/',[$row->options->alias]) !!}"><img alt="" src="{!! asset('public/upload/'.$row->options->image)!!}"></a>
@@ -54,7 +54,7 @@
 								</td>
 								<td>
 									<div class="cartpage-pro-dec">
-										<a href="{!! url('/',[$row->options->alias]) !!}">{!! $row["name"] !!}</a>
+										<a href="{!! url('/',[$row->options->alias]) !!}">{!! $row->name !!}</a>
 									</div>
 								</td>
 								<td>
@@ -63,29 +63,29 @@
 											@if($row->options->pricesale > 0)
 											<?php echo number_format($row->options->pricesale,0,',','.') ?>đ
 											@else
-											<?php echo number_format($row["price"],0,',','.') ?>đ
+											<?php echo number_format($row->price,0,',','.') ?>đ
 											@endif
 										</p>
 									</div>
 								</td>
 								<td>
 									<div class="cart-pro-quantity pro-quantity">
-										<input type="text" value="<?php echo $row->qty ?>" name="qty" name="qtybutton" class="pro-quantity-box item_cart_{!! $row->rowid !!}">
+										<input type="text" value="<?php echo $row->qty ?>" name="qty" name="qtybutton" class="pro-quantity-box item_cart_{!! $row->rowId !!}">
 									</div></br>
-									<a href="javascript:void(0)" class="update_cart" data-id="{!! $row->rowid !!}" data-qty="{!! $row->qty !!}"><span class="btn btn-primary" style="margin:0;padding:1px; border-radius:0">Update</span></a>
+									<a href="javascript:void(0)" class="update_cart" data-id="{!! $row->rowId !!}" data-qty="{!! $row->qty !!}"><span class="btn btn-primary" style="margin:0;padding:1px; border-radius:0">Update</span></a>
 								</td>
 								<td>
 									<div class="subtotal">
 										<p>
 											@if($row->options->pricesale > 0)
 											<?php 
-												echo number_format($row->options->pricesale * $row["qty"],0,',','.');
-												$total_sale+=($row->options->pricesale * $row["qty"]);
+												echo number_format($row->options->pricesale * $row->qty,0,',','.');
+												$total_sale+=($row->options->pricesale * $row->qty);
 											?>đ
 											@else
 											<?php 
-												echo number_format($row["qty"] * $row["price"],0,',','.');
-												$total+=($row["qty"] * $row["price"]);
+												echo number_format($row->qty * $row->price,0,',','.');
+												$total+=($row->qty * $row->price);
 											 ?>đ
 											@endif
 										</p>
@@ -93,7 +93,7 @@
 								</td>
 								<td>
 									<div class="cartpage-delete-item">
-										<a title="Remove item" href="javascript:void(0)"><i class="fa fa-trash-o item-remove" data-id="{!! $row->rowid !!}"></i></a>
+										<a title="Remove item" href="javascript:void(0)"><i class="fa fa-trash-o item-remove" data-id="{!! $row->rowId !!}"></i></a>
 									</div>
 								</td>
 							</tr>

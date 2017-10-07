@@ -12,7 +12,7 @@
         <p>Thêm vào giỏ hàng công</p>
       </div>
       <div class="modal-footer">
-	  	<button type="button" class="btn btn-default"><a href="/gio-hang">Gio Hàng</a></button>
+	  	<button type="button" class="btn btn-default"><a href="{!! url('gio-hang') !!}">Gio Hàng</a></button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
